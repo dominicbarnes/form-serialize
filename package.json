@@ -1,0 +1,16 @@
+{
+  "name": "form-serialize",
+  "version": "0.0.0",
+  "devDependencies": {
+    "component": "^1.0.0-rc5",
+    "mocha-phantomjs": "^3.3.2"
+  },
+  "scripts": {
+    "postinstall": "component install --dev",
+    "build": "component build --dev",
+    "clean": "rm -rf build",
+    "distclean": "rm -rf components node_modules",
+    "pretest": "npm run build",
+    "test": "mocha-phantomjs test/runner.html"
+  }
+}
