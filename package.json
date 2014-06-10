@@ -1,6 +1,6 @@
 {
   "name": "form-serialize",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "devDependencies": {
     "component": "^1.0.0-rc5",
     "component-test": "~0.1.3"
