@@ -1,8 +1,9 @@
 var assert = require("assert");
+var domify = require("domify");
 var serialize = require("form-serialize");
 
 describe("simple", function () {
-    var form = document.getElementById("test-simple");
+    var form = domify(require("form-serialize/test/simple.html"));
     var data = serialize(form);
 
     it("should serialize all the inputs", function () {
@@ -14,7 +15,7 @@ describe("simple", function () {
 });
 
 describe("unsubmittable", function () {
-    var form = document.getElementById("test-unsubmittable");
+    var form = domify(require("form-serialize/test/unsubmittable.html"));
     var data = serialize(form);
 
     it("should return an empty object (sanity check)", function () {
@@ -37,7 +38,7 @@ describe("unsubmittable", function () {
 });
 
 describe("nested fields", function () {
-    var form = document.getElementById("test-nested");
+    var form = domify(require("form-serialize/test/nested.html"));
     var data = serialize(form);
 
     it("should support nesting fields when separated by dots", function () {
@@ -49,5 +50,18 @@ describe("nested fields", function () {
 
     it("should not clobber other fields", function () {
         assert.equal(data.counter, 5);
+    });
+});
+
+describe("loose parameter", function () {
+    var form = domify(require("form-serialize/test/unsubmittable.html"));
+    var data = serialize(form, true);
+
+    it("should return all the fields (even disabled)", function () {
+        assert.deepEqual(data, {
+            txt: "should not submit",
+            sub: "should not submit",
+            btn: "should not submit"
+        });
     });
 });

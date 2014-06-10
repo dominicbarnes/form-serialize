@@ -1,7 +1,7 @@
 {
   "name": "form-serialize",
   "description": "Serializes an HTML form's inputs into a JS object",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [
     "html",
     "form",
@@ -17,10 +17,15 @@
   "development": {
     "dependencies": {
       "component/assert": "*",
-      "visionmedia/mocha": "*"
+      "component/domify": "*"
     },
     "scripts": [
       "test/index.js"
+    ],
+    "templates": [
+      "test/simple.html",
+      "test/unsubmittable.html",
+      "test/nested.html"
     ]
   },
   "license": "MIT",
