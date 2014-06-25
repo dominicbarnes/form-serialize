@@ -23,7 +23,7 @@ serialize(form);
 
 ## API
 
-serialize(form, [loose])
+serialize(form, [loose], [transformer])
 
 Takes the given `form` element and collects the values of all it's elements into a single JS object
 
@@ -61,3 +61,28 @@ If multiple fields are found using the same name, then an array will be created 
     test: [ "0", "1", "2" ]
 }
 ```
+
+The `transformer` parameter (a `Function`) can be used to transform the field values during
+serialization. (eg: parse numbers, dates, etc) This function receives 3 arguments: the `name`
+of the field, the input's `value` and the `element` itself.
+
+```html
+<input type="text" name="username" value="testuser">
+<input type="number" name="number" value="1.23">
+<input type="date" name="date" value="2014-06-25">
+<input type="text" name="empty">
+```
+
+```js
+serialize(form, function (name, value, element) {
+    switch (name) {
+    case "number": return parseFloat(value);
+    case "date":   return el.valueAsDate;
+    case "empty":  return null;
+    default:       return value; // catch-all
+    }
+});
+```
+
+**NOTE:** if using `transformer`, you *should* always return *something*, because the return
+value will clobber whatever other value was retrieved.

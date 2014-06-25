@@ -24,10 +24,7 @@
       "test/index.js"
     ],
     "templates": [
-      "test/simple.html",
-      "test/unsubmittable.html",
-      "test/nested.html",
-      "test/multiple.html"
+      "test/*.html"
     ]
   },
   "scripts": [
