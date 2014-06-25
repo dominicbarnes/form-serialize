@@ -1,7 +1,8 @@
 {
   "name": "form-serialize",
   "description": "Serializes an HTML form's inputs into a JS object",
-  "version": "0.0.2",
+  "version": "0.1.0",
+  "license": "MIT",
   "keywords": [
     "html",
     "form",
@@ -25,10 +26,10 @@
     "templates": [
       "test/simple.html",
       "test/unsubmittable.html",
-      "test/nested.html"
+      "test/nested.html",
+      "test/multiple.html"
     ]
   },
-  "license": "MIT",
   "scripts": [
     "index.js"
   ]
