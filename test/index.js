@@ -74,3 +74,22 @@ describe("multiple fields with same name", function () {
         assert.deepEqual(data.test, [ "0", "2", "4" ]);
     });
 });
+
+describe("transforming values during serialize", function () {
+    var form = domify(require("form-serialize/test/transform.html"));
+    var data = serialize(form, function (name, value, el) {
+        switch (name) {
+        case "number": return parseFloat(value);
+        case "date":   return el.valueAsDate;
+        case "empty":  return null;
+        default:       return value;
+        }
+    });
+
+    it("should transform values into non-strings", function () {
+        assert.strictEqual(data.username, "testuser");
+        assert.strictEqual(data.number, 1.23);
+        assert(data.date instanceof Date);
+        assert.strictEqual(data.empty, null);
+    });
+});

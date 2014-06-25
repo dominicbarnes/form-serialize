@@ -1,4 +1,7 @@
 
+# 0.2.0 (6/25/2014)
+ * added support for transforming values during retrieval (#2)
+
 # 0.1.0 (6/25/2014)
  * added support for multiple fields using same name (#4)
 
