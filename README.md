@@ -47,3 +47,17 @@ Fields can be grouped by using dots (.) to separate the name. For example:
     }
 }
 ```
+
+If multiple fields are found using the same name, then an array will be created for those values:
+
+```html
+<input type="checkbox" name="test" value="0" checked>
+<input type="checkbox" name="test" value="1" checked>
+<input type="checkbox" name="test" value="2" checked>
+```
+
+```js
+{
+    test: [ "0", "1", "2" ]
+}
+```
