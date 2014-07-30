@@ -11,6 +11,7 @@
   ],
   "dependencies": {
     "component/value": "*",
+    "dominicbarnes/form-controls": "*",
     "eivindfjeldstad/dot": "*",
     "yields/reduce": "*",
     "yields/submittable": "*"
@@ -18,7 +19,8 @@
   "development": {
     "dependencies": {
       "component/assert": "*",
-      "component/domify": "*"
+      "component/domify": "*",
+      "dominicbarnes/form-element": "*"
     },
     "scripts": [
       "test/index.js"

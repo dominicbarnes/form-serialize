@@ -23,12 +23,11 @@ serialize(form);
 
 ## API
 
-serialize(form, [loose], [transformer])
+serialize(form, [transformer])
 
-Takes the given `form` element and collects the values of all it's elements into a single JS object
-
-By default, **only** [submittable](https://github.com/yields/submittable) fields will be included.
-However, if the `loose` parameter is provided, *all* inputs will be included.
+Takes the given `form` element and collects the values of all of the
+[submittable](https://github.com/yields/submittable)
+elements into a single JS object
 
 Fields can be grouped by using dots (.) to separate the name. For example:
 
