@@ -1,7 +1,7 @@
 {
   "name": "form-serialize",
   "description": "Serializes an HTML form's inputs into a JS object",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "license": "MIT",
   "keywords": [
     "html",
@@ -12,7 +12,7 @@
   "dependencies": {
     "component/value": "^1.1.0",
     "dominicbarnes/form-controls": "^0.0.2",
-    "eivindfjeldstad/dot": "^0.1.0",
+    "dominicbarnes/square": "^0.0.1",
     "yields/reduce": "^0.0.1",
     "yields/submittable": "^0.2.0"
   },
