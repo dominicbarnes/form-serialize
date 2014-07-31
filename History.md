@@ -1,4 +1,7 @@
 
+# 0.4.0 (7/31/2014)
+ * changing to use square-bracket (`[]`) notation **instead of** dot (`.`) notation
+
 # 0.3.1 (7/31/2014)
  * pinning dependencies to semver ranges instead of `*`
 
