@@ -18,8 +18,7 @@ var submittable = require("submittable");
 module.exports = function (form, transformer) {
     return reduce(controls(form), function (acc, el) {
         if (!submittable(el)) return acc;
-
-        var val = transformer ? transformer.call(form, el.name, val, el) : value(val);
+        var val = transformer ? transformer.call(form, el.name, value(el), el) : value(el);
         return square.set(acc, el.name, val);
     }, {});
 };
