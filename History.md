@@ -1,4 +1,7 @@
 
+# 0.3.1 (7/31/2014)
+ * pinning dependencies to semver ranges instead of `*`
+
 # 0.3.0 (7/30/2014)
  * using dominicbarnes/form-controls for elements list (allows more flexibility for `form`)
  * dropped the `loose` parameter
