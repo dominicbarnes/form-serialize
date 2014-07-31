@@ -55,15 +55,6 @@ describe("serialize(form, [transformer])", function () {
         });
     });
 
-    describe("multiple fields with same name", function () {
-        var form = domify(require("form-serialize/test/multiple.html"));
-        var data = serialize(form);
-
-        it("should support multiple fields by creating an array", function () {
-            assert.deepEqual(data.test, [ "0", "2", "4" ]);
-        });
-    });
-
     describe("transforming values during serialize", function () {
         var form = domify(require("form-serialize/test/transform.html"));
         var data = serialize(form, function (name, value, el) {

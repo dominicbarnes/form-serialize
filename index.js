@@ -1,7 +1,7 @@
 // dependencies
 var controls = require("form-controls");
-var dot = require("dot");
 var reduce = require("reduce");
+var square = require("square");
 var value = require("value");
 var submittable = require("submittable");
 
@@ -18,22 +18,7 @@ var submittable = require("submittable");
 module.exports = function (form, transformer) {
     return reduce(controls(form), function (acc, el) {
         if (!submittable(el)) return acc;
-
-        var current = dot.get(acc, el.name);
-
-        var val = value(el);
-        if (transformer) {
-            val = transformer(el.name, val, el);
-        }
-
-        if (typeof current === "undefined" ) {
-            dot.set(acc, el.name, val);
-        } else if (Array.isArray(current)) {
-            dot.set(acc, el.name, current.concat(val));
-        } else {
-            dot.set(acc, el.name, [ current, val ]);
-        }
-
-        return acc;
+        var val = transformer ? transformer.call(form, el.name, value(el), el) : value(el);
+        return square.set(acc, el.name, val);
     }, {});
 };
