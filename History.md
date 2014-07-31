@@ -1,4 +1,8 @@
 
+# 0.3.0 (7/30/2014)
+ * using dominicbarnes/form-controls for elements list (allows more flexibility for `form`)
+ * dropped the `loose` parameter
+
 # 0.2.0 (6/25/2014)
  * added support for transforming values during retrieval (#2)
 
