@@ -1,4 +1,7 @@
 
+# 0.4.1 (7/31/2014)
+ * setting semver ranges for dependencies to allow a bit more flexibility
+
 # 0.4.0 (7/31/2014)
  * changing to use square-bracket (`[]`) notation **instead of** dot (`.`) notation
 
