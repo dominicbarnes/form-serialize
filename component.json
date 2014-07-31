@@ -10,11 +10,11 @@
     "object"
   ],
   "dependencies": {
-    "component/value": "*",
-    "dominicbarnes/form-controls": "*",
-    "eivindfjeldstad/dot": "*",
-    "yields/reduce": "*",
-    "yields/submittable": "*"
+    "component/value": "^1.1.0",
+    "dominicbarnes/form-controls": "^0.0.2",
+    "dominicbarnes/square": "^0.0.1",
+    "yields/reduce": "^0.0.1",
+    "yields/submittable": "^0.2.0"
   },
   "development": {
     "dependencies": {
