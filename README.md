@@ -29,12 +29,15 @@ Takes the given `form` element and collects the values of all of the
 [submittable](https://github.com/yields/submittable)
 elements into a single JS object
 
-Fields can be grouped by using dots (.) to separate the name. For example:
+Fields can be namespaced by using square bracket notation. For example:
 
 ```html
 <input type="hidden" name="id" value="1">
-<input type="text" name="user.name" value="dominic">
-<input type="url" name="user.website" value="http://dbarnes.info/">
+<input type="text" name="user[name]" value="dominic">
+<input type="url" name="user[website]" value="http://dbarnes.info/">
+<input type="checkbox" name="tags[]" value="a" checked>
+<input type="checkbox" name="tags[]" value="b">
+<input type="checkbox" name="tags[]" value="c" checked>
 ```
 
 ```js
@@ -43,23 +46,13 @@ Fields can be grouped by using dots (.) to separate the name. For example:
     user: {
         name: "dominic",
         website: "http://dbarnes.info/"
-    }
+    },
+    tags: [ "a", "c" ]
 }
 ```
 
-If multiple fields are found using the same name, then an array will be created for those values:
-
-```html
-<input type="checkbox" name="test" value="0" checked>
-<input type="checkbox" name="test" value="1" checked>
-<input type="checkbox" name="test" value="2" checked>
-```
-
-```js
-{
-    test: [ "0", "1", "2" ]
-}
-```
+See [square](https://github.com/dominicbarnes/square) for documentation about
+how square-bracket notation is implemented here.
 
 The `transformer` parameter (a `Function`) can be used to transform the field values during
 serialization. (eg: parse numbers, dates, etc) This function receives 3 arguments: the `name`
